@@ -24,57 +24,6 @@
   * this mechanism will avoid extraneous and bloated `config`, `logs` and `plugins`.
 
 * run your java application and enjoy~
+## update
 
-## Config file format
-
-```
-[ABC]
-# for the specified section name
-
-# for example
-[URL]
-EQUAL,https://someurl
-
-[DNS]
-EQUAL,somedomain
-
-# EQUAL       Use `equals` to compare
-# EQUAL_IC    Use `equals` to compare, ignore case
-# KEYWORD     Use `contains` to compare
-# KEYWORD_IC  Use `contains` to compare, ignore case
-# PREFIX      Use `startsWith` to compare
-# PREFIX_IC   Use `startsWith` to compare, ignore case
-# SUFFIX      Use `endsWith` to compare
-# SUFFIX_IC   Use `endsWith` to compare, ignore case
-# REGEXP      Use regular expressions to match
-```
-
-
-## Debug info
-
-* the `ja-netfilter` will **NOT** output debugging information by default
-* add environment variable `JANF_DEBUG=1` (log level) and start to enable it
-* or add system property `-Djanf.debug=1` (log level) to enable it
-* log level: `NONE=0`, `DEBUG=1`, `INFO=2`, `WARN=3`, `ERROR=4`
-
-## Debug output
-
-* the `ja-netfilter` will output debugging information to the `console` by default
-* add environment variable `JANF_OUTPUT=value` and start to change output medium
-* or add system property `-Djanf.output=value` to change output medium
-* output medium value: [`NONE=0`, `CONSOLE=1`, `FILE=2`, `CONSOLE+FILE=3`, `WITH_PID=4`]
-* eg: `console` + `file` + `pid file name` = 1 + 2 + 4 = 7, so the `-Djanf.output=7`
-
-## Plugin system
-
-* for developer:
-    * view the [scaffold project](https://gitee.com/ja-netfilter/ja-netfilter-sample-plugin) written for the plugin system
-    * compile your plugin and publish it
-    * just use your imagination~
-
-* for user:
-    * download the jar file of the plugin
-    * put it in the subdirectory called `plugins` where the ja-netfilter.jar file is located
-    * enjoy the new capabilities brought by the plugin
-    * if the file suffix is `.disabled.jar`, the plugin will be disabled
    
